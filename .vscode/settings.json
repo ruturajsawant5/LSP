@@ -1,0 +1,10 @@
+{
+    "window.zoomLevel": 2,
+    "editor.formatOnSave": true,
+    "clang-format.executable": "clang-format", // Ensure 'clang-format' is in your PATH
+    "clang-format.style": "file", // Use the .clang-format file in your project directory
+    "clang-format.debug": true,
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    }
+}
