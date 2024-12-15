@@ -1,3 +1,4 @@
+# Assignment
 In this assignment, We will write a generic diff function diff() which can tell whether the two similar Data structures are clones of each other or not. Two similar Data structures could be two linked list, two trees or anything.  diff() should be generic and should work for all data structures.
 
 Instructions :
