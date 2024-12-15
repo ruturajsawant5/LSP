@@ -11,6 +11,24 @@ diff (void *root1,    /*pointer to Data structure 1*/
       int comparator(void *, void *),
       void *(*get_app_data(void *))){  /*Comparison function callback*/
 
-      /*Write your code here*/
+      void *next1 = NULL, *next2 = NULL;
+      /*Basic quick sanity checks*/
+      if(root1 && !root2)
+          return -1;
+      if(!root1 && root2)
+          return -1;
+      if(comparator(get_app_data(root1), get_app_data(root2)))
+          return -1;
+      
+      next1 = iterator(root1);
+      next2 = iterator(root2);         
+      
+      while(1){
+        if(comparator(get_app_data(next1), get_app_data(next2)))
+            return -1;
+        next1 = iterator(next1);
+        next2 = iterator(next2);
+        if(!next1 && !next2) return 0;
+      }
       return 0;
 }
