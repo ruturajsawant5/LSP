@@ -1,0 +1,25 @@
+PRINCIPLE 1: RETURN VALUE OF EVERY SYSTEM CALL MUST BE CHECKED 
+FOR POSSIBLE FAILURE. 
+
+CATEGORIES OF LINUX SYSTEM CALL AS FAR AS ERROR HANDLING IS CONCERNED: 
+    1) 1% system calls: NEVER FAIL. 
+        eg. 
+
+        getpid(); 
+        getuid(); 
+
+    2) 0.5 to 1 % system calls return void* 
+        e.g. mmap() | shamat() 
+
+    3) Rest of the system calls (98 to 99%) return an integer. 
+        e.g. 
+        open(), read(), write(), readv(), writev(), pread(), 
+        pwrite(), lseek(), preadv(), pwritev(), close(), 
+        dup(), dup2(), and MANY MORE 
+
+PRINCIPLE: 
+    If system call may fail (for whatever reason) and if it returns 
+        1) void* then the system call returns NULL should it fail, 
+        and returns non-NULL address should it succeed. 
+        2) -1 should it fail and 0 should it succeed. 
+ 
